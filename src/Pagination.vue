@@ -29,15 +29,32 @@ export default {
   },
   computed: {
     isFirstPage () {
+      if(this.query.limit === 0){
+        return true;
+      }
       return +this.query.offset === 0 || +this.query.limit >= this.total
     },
     isLastPage () {
+      if(this.query.limit === 0){
+        return true;
+      }
       return +this.query.offset + +this.query.limit >= this.total
     },
     totalPage () {
+      if(this.query.limit === 0){
+        if(this.total === 0){
+          return 0;
+        }
+        else{
+          return 1;
+        }
+      }
       return Math.ceil(this.total / +this.query.limit)
     },
     curPage () {
+      if(this.query.limit === 0){
+        return 1;
+      }
       return Math.ceil(+this.query.offset / +this.query.limit) + 1
     },
     dspBtns () {
