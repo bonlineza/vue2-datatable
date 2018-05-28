@@ -19,7 +19,7 @@
 Files changed:
   - PageSizeSelect.vue
   - Pagination.vue
-  
+
 Changes made
  - Added text 'All' as the option shown in the page size options drop down when the page size is 0.
- - Added code to show all entries in datatable when the page size option selected is 0.
+ - Added code to display correct buttons when the 'All' option is selected i.e. the page size option is 0.
